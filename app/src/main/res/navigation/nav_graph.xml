@@ -9,5 +9,14 @@
         android:id="@+id/compassFragment"
         android:name="com.harnet.followtocompass.view.CompassFragment"
         android:label="compass_fragment"
-        tools:layout="@layout/compass_fragment" />
+        tools:layout="@layout/compass_fragment" >
+        <action
+            android:id="@+id/action_compassFragment_to_mapFragment"
+            app:destination="@id/mapFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/mapFragment"
+        android:name="com.harnet.followtocompass.view.MapFragment"
+        android:label="fragment_map"
+        tools:layout="@layout/fragment_map" />
 </navigation>

@@ -7,6 +7,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.databinding.DataBindingUtil
+import androidx.navigation.Navigation
 import com.harnet.followtocompass.viewModel.CompassViewModel
 import com.harnet.followtocompass.R
 import com.harnet.followtocompass.databinding.CompassFragmentBinding
@@ -27,6 +28,9 @@ class CompassFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        dataBinding.mapBtn.setOnClickListener {
+            Navigation.findNavController(dataBinding.mapBtn).navigate(CompassFragmentDirections.actionCompassFragmentToMapFragment())
+        }
     }
 
 }
