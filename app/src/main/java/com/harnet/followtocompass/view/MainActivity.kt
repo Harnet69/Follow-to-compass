@@ -1,7 +1,8 @@
-package com.harnet.followtocompass
+package com.harnet.followtocompass.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import com.harnet.followtocompass.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
