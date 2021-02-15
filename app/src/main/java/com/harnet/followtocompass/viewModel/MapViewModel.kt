@@ -9,7 +9,7 @@ import com.harnet.followtocompass.model.MyLocation
 import com.harnet.followtocompass.model.di.DaggerMyLocationComponent
 import javax.inject.Inject
 
-class CompassViewModel(application: Application) : BaseViewModel(application) {
+class MapViewModel(application: Application): BaseViewModel(application) {
     @Inject
     lateinit var myLocation: MyLocation
 
