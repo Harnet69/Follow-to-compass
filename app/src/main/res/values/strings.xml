@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">Follow to compass</string>
+    <string name="distance_label">Distance from the destination:</string>
 </resources>
