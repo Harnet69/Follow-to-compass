@@ -5,6 +5,12 @@ Simple application, which displays a direction and distance to predefined destin
 to indicate the destination based on a geographic coordinate system. It makes it easy for the user to
 enter the latitude and longitude coordinates and navigate towards the location.
 
+## What was done:
+- calculation of a distance to the goal DONE
+- compass which point out to the goals direction NOT YET
+- Google map view with user current location DONE
+- choosing the goal coordinates on Google map NOT YET
+
 ## Application screens:
 ![App screens](https://github.com/Harnet69/Follow-to-compass/blob/master/app/GitHubMediaFiles/app_compass.png)
 ![App screens](https://github.com/Harnet69/Follow-to-compass/blob/master/app/GitHubMediaFiles/app_map.png)
