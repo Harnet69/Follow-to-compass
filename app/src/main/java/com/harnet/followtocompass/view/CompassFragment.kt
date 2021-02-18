@@ -6,6 +6,7 @@ import android.content.pm.PackageManager
 import android.os.Build
 import androidx.lifecycle.ViewModelProvider
 import android.os.Bundle
+import android.util.Log
 import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
@@ -43,10 +44,19 @@ class CompassFragment : Fragment() {
                 ?.checkPermission()
         }
 
+        observeViewModel()
 
         dataBinding.mapBtn.setOnClickListener {
             Navigation.findNavController(dataBinding.mapBtn).navigate(CompassFragmentDirections.actionCompassFragmentToMapFragment())
         }
+    }
+
+    private fun observeViewModel(){
+        viewModel.mUserCoords.observe(viewLifecycleOwner, { userCoords ->
+            if (userCoords != null) {
+                Log.i("userCoords", "observeViewModel: $userCoords")
+            }
+        })
     }
 
     // method is called when activity get a result of user permission decision
