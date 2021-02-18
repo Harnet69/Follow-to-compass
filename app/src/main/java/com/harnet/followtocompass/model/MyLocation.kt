@@ -16,7 +16,7 @@ import javax.inject.Singleton
 
 @Singleton
 class MyLocation @Inject constructor() {
-    private val updTime= 10_000L
+    private val updTime= 2_000L
     internal lateinit var timer1: Timer
     internal var lm: LocationManager? = null
     internal lateinit var locationResult: LocationResult

@@ -5,8 +5,11 @@ import android.app.Application
 import android.location.Location
 import androidx.lifecycle.MutableLiveData
 import com.google.android.gms.maps.model.LatLng
+import com.google.maps.android.SphericalUtil
 import com.harnet.followtocompass.model.MyLocation
 import com.harnet.followtocompass.model.di.DaggerMyLocationComponent
+import java.math.RoundingMode
+import java.text.DecimalFormat
 import javax.inject.Inject
 
 class CompassViewModel(application: Application) : BaseViewModel(application) {
@@ -34,5 +37,16 @@ class CompassViewModel(application: Application) : BaseViewModel(application) {
         }
 
         myLocation.getLocation(activity, locationResult)
+    }
+
+    fun calcDistance(userLoc: LatLng, goalLoc: LatLng): Double {
+        return SphericalUtil.computeDistanceBetween(userLoc, goalLoc) / 1000
+    }
+
+
+    fun roundOffDecimal(number: Double): Double {
+        val df = DecimalFormat("#.##")
+        df.roundingMode = RoundingMode.CEILING
+        return df.format(number).toDouble()
     }
 }

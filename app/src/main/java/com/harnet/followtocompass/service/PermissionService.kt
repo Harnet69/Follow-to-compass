@@ -8,6 +8,7 @@ import android.os.Build
 import android.widget.Toast
 import androidx.annotation.RequiresApi
 import androidx.fragment.app.Fragment
+import com.harnet.followtocompass.view.CompassFragment
 import com.harnet.followtocompass.view.MapFragment
 import java.util.regex.Matcher
 import java.util.regex.Pattern
@@ -87,7 +88,12 @@ abstract class PermissionService(private val activity: Activity, private val fra
         when (val activeFragment: Fragment? =
             fragment.childFragmentManager.primaryNavigationFragment) {
             is MapFragment -> {
-                (activeFragment as MapFragment).onPermissionsResult(
+                (activeFragment).onPermissionsResult(
+                    permissionGranted
+                )
+            }
+            is CompassFragment -> {
+                (activeFragment).onPermissionsResult(
                     permissionGranted
                 )
             }

@@ -45,7 +45,7 @@
                     android:id="@+id/distance"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="1222m" />
+                    android:layout_marginStart="5dp"/>
             </LinearLayout>
 
         </androidx.cardview.widget.CardView>
@@ -81,31 +81,31 @@
             android:layout_marginEnd="20dp"
             android:layout_marginBottom="10dp"
             android:layout_weight="3"
-            android:background="@color/white"
             android:orientation="horizontal"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toStartOf="@+id/map_btn"
             app:layout_constraintStart_toStartOf="parent">
 
             <EditText
-                android:id="@+id/lat"
+                android:id="@+id/goal_lat"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:hint="Lat" />
+                android:hint="Lat"
+                android:inputType="numberDecimal" />
 
             <EditText
-                android:id="@+id/lng"
+                android:id="@+id/goal_lng"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="2"
                 android:ems="10"
-                android:inputType="numberDecimal"
-                android:hint="Lng" />
+                android:hint="Lng"
+                android:inputType="numberDecimal" />
 
             <ImageButton
+                android:id="@+id/calc_distance"
                 android:layout_width="0dp"
                 android:layout_height="match_parent"
                 android:layout_weight="1"
