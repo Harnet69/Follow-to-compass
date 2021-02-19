@@ -5,4 +5,14 @@
     <string name="lat_lng_text">Lat/Lng</string>
     <string name="compass_dial" translatable="false">Compass Dial</string>
     <string name="compass_hands" translatable="false">Compass Hands</string>
+
+    <string name="sotw_north" translatable="false">N</string>
+    <string name="sotw_east" translatable="false">E</string>
+    <string name="sotw_south" translatable="false">S</string>
+    <string name="sotw_west" translatable="false">W</string>
+    <string name="sotw_northeast" translatable="false">NE</string>
+    <string name="sotw_northwest" translatable="false">NW</string>
+    <string name="sotw_southeast" translatable="false">SE</string>
+    <string name="sotw_southwest" translatable="false">SW</string>
+
 </resources>

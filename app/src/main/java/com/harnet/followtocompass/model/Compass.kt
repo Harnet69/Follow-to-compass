@@ -5,8 +5,9 @@ import android.hardware.Sensor
 import android.hardware.SensorEvent
 import android.hardware.SensorEventListener
 import android.hardware.SensorManager
+import android.util.Log
 
-class Compass: SensorEventListener {
+class Compass(context: Context?) : SensorEventListener {
     private val TAG = "Compass"
 
     interface CompassListener {
@@ -27,11 +28,13 @@ class Compass: SensorEventListener {
     private var azimuth = 0f
     private var azimuthFix = 0f
 
-    fun Compass(context: Context) {
-        sensorManager = context
-            .getSystemService(Context.SENSOR_SERVICE) as SensorManager
-        gsensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
-        msensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
+    init {
+        if(context != null) {
+            sensorManager = context
+                .getSystemService(Context.SENSOR_SERVICE) as SensorManager
+            gsensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_ACCELEROMETER)
+            msensor = sensorManager!!.getDefaultSensor(Sensor.TYPE_MAGNETIC_FIELD)
+        }
     }
 
     fun start() {
@@ -91,10 +94,8 @@ class Compass: SensorEventListener {
                 azimuth =
                     Math.toDegrees(orientation[0].toDouble()).toFloat() // orientation
                 azimuth = (azimuth + azimuthFix + 360) % 360
-                // Log.d(TAG, "azimuth (deg): " + azimuth);
-                if (listener != null) {
-                    listener!!.onNewAzimuth(azimuth)
-                }
+                Log.i(TAG, "azimuth (deg): " + azimuth)
+                listener?.onNewAzimuth(azimuth)
             }
         }
     }
