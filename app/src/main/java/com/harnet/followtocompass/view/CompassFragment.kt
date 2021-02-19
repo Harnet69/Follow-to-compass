@@ -129,16 +129,11 @@ class CompassFragment : Fragment() {
 
     private fun setupCompass(){
         compass = Compass(context)
-//        val cl: Compass.CompassListener = getCompassListener()
-//        compass.setListener(cl)
+        val cl: Compass.CompassListener = getCompassListener()
+        compass.setListener(cl)
     }
 
     private fun adjustArrow(azimuth: Float) {
-        Log.d(
-            "Compasss azimut",
-            "will set rotation from " + currentAzimuth + " to "
-                    + azimuth
-        )
         val an: Animation = RotateAnimation(
             -currentAzimuth, -azimuth,
             Animation.RELATIVE_TO_SELF, 0.5f, Animation.RELATIVE_TO_SELF,
@@ -155,20 +150,18 @@ class CompassFragment : Fragment() {
         dataBinding.sotwLabel.text = sotwFormatter.format(azimuth)
     }
 
-//    private fun getCompassListener(): Compass.CompassListener {
-//        return Compass.CompassListener {
-//            fun onNewAzimuth(azimuth: Float) {
-//                // UI updates only in UI thread
-//                // https://stackoverflow.com/q/11140285/444966
-////                runOnUiThread(Runnable {
-//                    adjustArrow(azimuth)
-//                    adjustSotwLabel(azimuth)
-////                })
-//            }
-//        }
-//    }
-
-
+    private fun getCompassListener(): Compass.CompassListener {
+        return object : Compass.CompassListener {
+            override fun onNewAzimuth(azimuth: Float) {
+                // UI updates only in UI thread
+                // https://stackoverflow.com/q/11140285/444966
+//                runOnUiThread(Runnable {
+                    adjustArrow(azimuth)
+                    adjustSotwLabel(azimuth)
+//                })
+            }
+        }
+    }
 
     // method is called when activity get a result of user permission decision
     fun onPermissionsResult(permissionGranted: Boolean) {
