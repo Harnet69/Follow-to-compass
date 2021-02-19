@@ -3,4 +3,6 @@
     <string name="distance_label">Distance from the destination:</string>
     <string name="btn_maps">GO TO MAPS</string>
     <string name="lat_lng_text">Lat/Lng</string>
+    <string name="compass_dial" translatable="false">Compass Dial</string>
+    <string name="compass_hands" translatable="false">Compass Hands</string>
 </resources>

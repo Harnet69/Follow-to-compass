@@ -2,4 +2,6 @@
 <resources>
     <string name="app_name">Podążaj za kompasem</string>
     <string name="distance_label">Dystans do celu</string>
+    <string name="btn_maps">Do map</string>
+    <string name="lat_lng_text">Szer/Dł</string>
 </resources>
